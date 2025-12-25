@@ -1,7 +1,33 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Calculator, Plus, Trash2, Layers, DollarSign, BarChart3, Copy, FileDown, Check } from 'lucide-react';
+import { Plus, Trash2, Layers, DollarSign, BarChart3, Copy, FileDown, Check } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import { LineItem, BlenderResult } from '../types';
+
+// Custom Blender Icon Component
+const BlenderIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    {/* Jar */}
+    <path d="M6 6h12l-1.5 11h-9L6 6Z" />
+    {/* Base */}
+    <path d="M8 21h8v-4H8v4Z" />
+    {/* Lid Handle */}
+    <path d="M12 2v4" />
+    {/* Blade/Mix line */}
+    <path d="M12 12v3" />
+    <path d="M10 15h4" />
+  </svg>
+);
 
 const EcpmCalculator: React.FC = () => {
   // --- State Management ---
@@ -153,7 +179,7 @@ const EcpmCalculator: React.FC = () => {
       {/* 2. The Signature Header ("Tilted Sticker") - Reverted to previous size */}
       <div className="flex flex-col items-center mb-6">
         <div className="w-14 h-14 bg-blue-600 rounded-2xl shadow-lg shadow-blue-600/10 mb-5 text-white transform -rotate-6 flex items-center justify-center hover:scale-105 duration-300 transition-transform">
-          <Calculator size={28} strokeWidth={2} />
+          <BlenderIcon size={28} />
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-3 tracking-tight text-center">
           eCPM Blender
