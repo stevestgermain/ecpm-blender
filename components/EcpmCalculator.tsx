@@ -298,7 +298,7 @@ const EcpmCalculator: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-3">
               {/* Primary Metric: Blended eCPM */}
-              <div className="col-span-2 bg-white dark:bg-zinc-800 p-4 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors group">
+              <div className="col-span-2 bg-white dark:bg-black p-4 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors group">
                 <div className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider mb-1">
                   Blended eCPM
                 </div>
@@ -308,7 +308,7 @@ const EcpmCalculator: React.FC = () => {
               </div>
 
               {/* Secondary Metric: Total Budget */}
-              <div className="bg-white dark:bg-zinc-800 p-3 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
+              <div className="bg-white dark:bg-black p-3 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
                 <div className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider mb-1">
                   Total Budget
                 </div>
@@ -318,7 +318,7 @@ const EcpmCalculator: React.FC = () => {
               </div>
 
               {/* Secondary Metric: Total Impressions */}
-              <div className="bg-white dark:bg-zinc-800 p-3 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
+              <div className="bg-white dark:bg-black p-3 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
                 <div className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider mb-1">
                   Total Impressions
                 </div>
