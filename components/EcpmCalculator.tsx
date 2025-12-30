@@ -176,26 +176,26 @@ const EcpmCalculator: React.FC = () => {
   return (
     <div className="w-full max-w-[460px] mx-auto">
       
-      {/* 2. The Signature Header ("Tilted Sticker") - Reverted to previous size */}
+      {/* Header */}
       <div className="flex flex-col items-center mb-6">
-        <div className="w-14 h-14 bg-blue-600 rounded-2xl shadow-lg shadow-blue-600/10 mb-5 text-white transform -rotate-6 flex items-center justify-center hover:scale-105 duration-300 transition-transform">
+        <div className="w-14 h-14 bg-blue-600 dark:bg-blue-500 rounded-2xl shadow-lg shadow-blue-600/10 dark:shadow-blue-500/20 mb-5 text-white transform -rotate-6 flex items-center justify-center hover:scale-105 duration-300 transition-transform">
           <BlenderIcon size={28} />
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-3 tracking-tight text-center">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight text-center">
           eCPM Blender
         </h1>
-        <p className="text-[13px] text-gray-500 max-w-[420px] mx-auto font-normal leading-relaxed text-center">
+        <p className="text-[13px] text-gray-500 dark:text-gray-400 max-w-[420px] mx-auto font-normal leading-relaxed text-center">
           Calculate the weighted average eCPM across multiple line items in your media plan.
         </p>
       </div>
 
-      {/* 3. Main Card - Condensed Padding (p-5) */}
-      <div className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-200 p-5">
+      {/* Main Card */}
+      <div className="bg-white dark:bg-zinc-900 rounded-3xl shadow-xl shadow-gray-200/50 dark:shadow-black/50 border border-gray-200 dark:border-zinc-800 p-5 transition-colors duration-300">
         
-        {/* Section Header - Condensed Margin */}
+        {/* Section Header */}
         <div className="flex items-center gap-2 mb-3">
-          <Layers className="w-4 h-4 text-blue-600" />
-          <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+          <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+          <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
             Media Plan Inputs
           </h3>
         </div>
@@ -204,22 +204,22 @@ const EcpmCalculator: React.FC = () => {
           
           {/* Column Headers */}
           <div className="flex gap-3 px-1 mb-1">
-            <div className="flex-1 text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            <div className="flex-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider">
               Budget
             </div>
-            <div className="flex-1 text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+            <div className="flex-1 text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider">
               CPM
             </div>
             <div className="w-8"></div>
           </div>
 
-          {/* Line Items List - Condensed Rows (space-y-2) */}
+          {/* Line Items List */}
           <div className="space-y-2">
             {lineItems.map((item, index) => (
               <div key={item.id} className="flex gap-3 items-center group">
                 {/* Budget */}
                 <div className="flex-1 relative">
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
                     <DollarSign size={13} />
                   </div>
                   <input
@@ -227,13 +227,13 @@ const EcpmCalculator: React.FC = () => {
                     value={item.budget}
                     onChange={(e) => handleLineItemChange(item.id, 'budget', e.target.value)}
                     placeholder={index === 0 ? "500" : index === 1 ? "1000" : "50"}
-                    className="w-full pl-7 pr-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder:text-gray-400 focus:bg-white focus:ring-1 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 outline-none"
+                    className="w-full pl-7 pr-3 py-2 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white text-sm placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:bg-white dark:focus:bg-zinc-800 focus:ring-1 focus:ring-blue-500/20 dark:focus:ring-blue-400/20 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200 outline-none"
                   />
                 </div>
 
                 {/* CPM */}
                 <div className="flex-1 relative">
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
                     <DollarSign size={13} />
                   </div>
                   <input
@@ -241,7 +241,7 @@ const EcpmCalculator: React.FC = () => {
                     value={item.cpm}
                     onChange={(e) => handleLineItemChange(item.id, 'cpm', e.target.value)}
                     placeholder={index === 0 ? "12.50" : index === 1 ? "4.25" : "10"}
-                    className="w-full pl-7 pr-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder:text-gray-400 focus:bg-white focus:ring-1 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 outline-none"
+                    className="w-full pl-7 pr-3 py-2 rounded-xl border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-white text-sm placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:bg-white dark:focus:bg-zinc-800 focus:ring-1 focus:ring-blue-500/20 dark:focus:ring-blue-400/20 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200 outline-none"
                   />
                 </div>
 
@@ -249,7 +249,7 @@ const EcpmCalculator: React.FC = () => {
                 <button
                   onClick={() => removeLineItem(item.id)}
                   disabled={lineItems.length <= 1}
-                  className="w-8 h-8 flex items-center justify-center text-gray-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all disabled:opacity-0"
+                  className="w-8 h-8 flex items-center justify-center text-gray-300 dark:text-gray-600 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all disabled:opacity-0"
                   aria-label="Remove line item"
                 >
                   <Trash2 size={15} />
@@ -258,21 +258,21 @@ const EcpmCalculator: React.FC = () => {
             ))}
           </div>
 
-          {/* Add Row Button - Reduced margin/padding */}
+          {/* Add Row Button */}
           <button
             onClick={addLineItem}
-            className="w-full py-2.5 flex items-center justify-center gap-2 border border-dashed border-gray-300 rounded-xl text-[11px] font-semibold text-gray-500 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50/50 transition-all shadow-sm mt-2"
+            className="w-full py-2.5 flex items-center justify-center gap-2 border border-dashed border-gray-300 dark:border-zinc-700 rounded-xl text-[11px] font-semibold text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-all shadow-sm mt-2"
           >
             <Plus size={14} />
             <span>ADD LINE ITEM</span>
           </button>
 
-          {/* Results Section - Condensed Divider */}
-          <div className="mt-5 pt-5 border-t border-gray-100">
+          {/* Results Section */}
+          <div className="mt-5 pt-5 border-t border-gray-100 dark:border-zinc-800">
              <div className="flex items-center justify-between mb-4">
                <div className="flex items-center gap-2">
-                 <BarChart3 className="w-4 h-4 text-blue-600" />
-                 <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                 <BarChart3 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                 <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                    Results
                  </h3>
                </div>
@@ -281,14 +281,14 @@ const EcpmCalculator: React.FC = () => {
                <div className="flex gap-2">
                  <button 
                     onClick={handleCopy}
-                    className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-semibold bg-white border border-gray-200 rounded-lg text-gray-600 shadow-sm hover:text-blue-600 hover:border-blue-300 hover:shadow-md transition-all"
+                    className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-semibold bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg text-gray-600 dark:text-gray-300 shadow-sm hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all"
                  >
-                   {copied ? <Check size={12} className="text-green-500"/> : <Copy size={12} />}
+                   {copied ? <Check size={12} className="text-green-500 dark:text-green-400"/> : <Copy size={12} />}
                    {copied ? 'Copied' : 'Copy'}
                  </button>
                  <button 
                     onClick={handleExportPDF}
-                    className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-semibold bg-white border border-gray-200 rounded-lg text-gray-600 shadow-sm hover:text-blue-600 hover:border-blue-300 hover:shadow-md transition-all"
+                    className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-semibold bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg text-gray-600 dark:text-gray-300 shadow-sm hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all"
                  >
                    <FileDown size={12} />
                    PDF
@@ -298,31 +298,31 @@ const EcpmCalculator: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-3">
               {/* Primary Metric: Blended eCPM */}
-              <div className="col-span-2 bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors group">
-                <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1">
+              <div className="col-span-2 bg-white dark:bg-zinc-800 p-4 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors group">
+                <div className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider mb-1">
                   Blended eCPM
                 </div>
-                <div className="text-3xl font-bold text-gray-900 tracking-tight text-blue-600">
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 tracking-tight">
                   {formatCurrency(blenderResult.blendedEcpm)}
                 </div>
               </div>
 
               {/* Secondary Metric: Total Budget */}
-              <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors">
-                <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1">
+              <div className="bg-white dark:bg-zinc-800 p-3 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
+                <div className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider mb-1">
                   Total Budget
                 </div>
-                <div className="text-lg font-bold text-gray-900 tracking-tight">
+                <div className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">
                   {formatCurrency(blenderResult.totalBudget)}
                 </div>
               </div>
 
               {/* Secondary Metric: Total Impressions */}
-              <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors">
-                <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider mb-1">
+              <div className="bg-white dark:bg-zinc-800 p-3 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
+                <div className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-wider mb-1">
                   Total Impressions
                 </div>
-                <div className="text-lg font-bold text-gray-900 tracking-tight">
+                <div className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">
                   {formatNumber(blenderResult.totalImpressions)}
                 </div>
               </div>
