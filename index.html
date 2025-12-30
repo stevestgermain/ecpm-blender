@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Drive | eCPM Blender</title>
     <script>
+ <script>
   // Apply theme INSTANTLY before React loads - prevents flash
   (function() {
     function applyTheme(theme) {
@@ -20,6 +21,16 @@
         applyTheme(event.data.theme);
       }
     }
+    
+    window.addEventListener('message', handleMessage);
+    
+    if (window.parent !== window) {
+      window.parent.postMessage({ type: 'REQUEST_THEME' }, '*');
+    } else {
+      applyTheme('light');
+    }
+  })();
+</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
